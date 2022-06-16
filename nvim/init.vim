@@ -158,6 +158,7 @@ vnoremap Y "+y
 nnoremap yY ^"+y$
 
 " Nerd Tree
+let NERDTreeShowHidden=1
 nnoremap <C-n> :NERDTreeFocus<Cr>
 
 "Fzf
