@@ -143,8 +143,7 @@ require'lspconfig'.gopls.setup{on_attach = on_attach}
 require'lspconfig'.vuels.setup{on_attach = on_attach} 
 require'lspconfig'.rust_analyzer.setup{on_attach = on_attach} 
 require'lspconfig'.bashls.setup{on_attach = on_attach}
-
-
+require'lspconfig'.quick_lint_js.setup{on_attach = on_attach}
 
 EOF
 
