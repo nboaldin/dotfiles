@@ -56,12 +56,12 @@ return packer.startup(function(use)
   use { "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }
 
   --nvim tree
-  use { 'kyazdani42/nvim-web-devicons', commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e"}
+  -- use { 'kyazdani42/nvim-web-devicons', commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e"}
   use {
   'kyazdani42/nvim-tree.lua',
-  requires = {
-    'kyazdani42/nvim-web-devicons', -- optional, for file icons
-  },
+  -- requires = {
+  --   'kyazdani42/nvim-web-devicons', -- optional, for file icons
+  -- },
   tag = 'nightly' -- optional, updated every week. (see issue #1193)
 }
 
@@ -69,6 +69,7 @@ return packer.startup(function(use)
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
   use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
   use { "sainnhe/gruvbox-material", commit = "5d2cec690bfa56b863a7b9d482152d873da7ba7a" }
+  use { 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*' }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin

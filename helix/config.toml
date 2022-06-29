@@ -20,3 +20,5 @@ display-messages = true
 j = { k = "normal_mode" } 
 k = { j = "normal_mode" }
 
+[keys.normal]
+y = "yank_joined_to_clipboard"

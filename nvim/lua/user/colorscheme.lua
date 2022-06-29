@@ -1,4 +1,4 @@
-local colorscheme = "gruvbox-material"
+local colorscheme = "rose-pine"
 -- old darkplus
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
