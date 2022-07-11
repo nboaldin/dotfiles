@@ -12,11 +12,9 @@ local servers = {
   "jsonls",
   "yamlls",
   "vimls",
-  "terraformls",
   "gopls",
   "golangci_lint_ls",
-  "rust_analyzer",
-  "tailwindcss"
+  "rust_analyzer"
 }
 
 lsp_installer.setup()
