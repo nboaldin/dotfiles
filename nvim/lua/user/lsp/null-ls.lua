@@ -16,9 +16,10 @@ null_ls.setup {
       extra_filetypes = { "toml" },
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
+    -- formatting.csharpier,
     formatting.stylua,
     formatting.gofmt,
-    formatting.rustfmt,
-    formatting.terraform_fmt,
+    -- formatting.rustfmt,
+    formatting.terraform_fmt
   },
 }
