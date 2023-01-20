@@ -3,10 +3,10 @@ local M = {}
 M.setup = function()
   local signs = {
 
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+    -- { name = "DiagnosticSignError", text = "" },
+    -- { name = "DiagnosticSignWarn", text = "" },
+    -- { name = "DiagnosticSignHint", text = "" },
+    -- { name = "DiagnosticSignInfo", text = "" },
   }
 
   for _, sign in ipairs(signs) do
@@ -66,6 +66,10 @@ M.on_attach = function(client, bufnr)
   local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
   if not status_cmp_ok then
     return
+  end
+
+  if client.name == "jsonls" then
+    require("null-ls").disable({ "prettier" })
   end
 
 
