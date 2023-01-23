@@ -56,7 +56,6 @@ return packer.startup(function(use)
   use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" })
 
   --nvim tree
-  -- use { 'kyazdani42/nvim-web-devicons', commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e"}
   use({ "kyazdani42/nvim-tree.lua" })
 
   -- Colorschemes
@@ -90,7 +89,7 @@ return packer.startup(function(use)
     "neovim/nvim-lspconfig",
   })
   -- use({ "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" }) -- simple to use language server installer
-  use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
+  use({ "jose-elias-alvarez/null-ls.nvim"}) -- for formatters and linters
   use({ "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" })
 
   -- Telescope
