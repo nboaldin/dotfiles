@@ -3,10 +3,7 @@ if not status_ok then
   return
 end
 
-
--- require "user.lsp.lsp-installer"
 require("user.lsp.handlers").setup()
-require "user.lsp.null-ls"
 
 require("mason").setup()
 require("mason-lspconfig").setup()
@@ -26,12 +23,15 @@ require("mason-lspconfig").setup_handlers {
   end,
 }
 
-
-
-
-
-
--- After setting up mason-lspconfig you may set up servers via lspconfig
--- require("lspconfig").sumneko_lua.setup {}
--- require("lspconfig").rust_analyzer.setup {}
--- ...
+require("mason-null-ls").setup({
+  ensure_installed = {
+    -- Opt to list sources here, when available in mason.
+  },
+  automatic_installation = false,
+  automatic_setup = true, -- Recommended, but optional
+})
+require("null-ls").setup({
+  on_attach = require("user.lsp.handlers").on_attach,
+  capabilities = require("user.lsp.handlers").capabilities,
+})
+require 'mason-null-ls'.setup_handlers()

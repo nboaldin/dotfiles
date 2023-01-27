@@ -1,405 +1,97 @@
 # Font configuration
 font:
-  size: 13.0
+  size: 14.0
   offset:
     x: 1
     y: 1
 
-  # Normal (roman) font face
   normal:
     family: BlexMono Nerd Font Mono
     style: Light
-
-  # Bold font face
   bold:
     family: BlexMono Nerd Font Mono
     style: Text
 
-  # Italic font face
-  # italic:
-  #   family: BlexMono Nerd Font Text
-  #   style: Italic
-
-  # Bold italic font face
-  # bold_italic:
-  #   family: BlexMono Nerd Font Text
-  #   style: Bold Italic
-# Colors
-schemes:
-  gruvbox_material: &gruvbox_material
-    primary:
-      # hard contrast background - '#1d2021'
-      background:        &gruvbox_dark_bg '#282828'
-      # soft contrast background - '#32302f'
-      foreground:        '#ebdbb2'
-      bright_foreground: '#fbf1c7'
-      dim_foreground:    '#a89984'
-    cursor:
-      text:   CellBackground
-      cursor: CellForeground
-    vi_mode_cursor:
-      text:   CellBackground
-      cursor: CellForeground
-    # search:
-    #   matches:
-    #     foreground: '#000000'
-    #     background: '#ffffff'
-    #   focused_match:
-    #    foreground: CellBackground
-    #    background: CellForeground
-    #   bar:
-    #     background: ''
-    #     foreground: ''
-    # line_indicator:
-    #   foreground: None
-    #   background: None
-    selection:
-      text:       CellBackground
-      background: CellForeground
-    bright:
-      black:   '#928374'
-      red:     '#fb4934'
-      green:   '#b8bb26'
-      yellow:  '#fabd2f'
-      blue:    '#83a598'
-      magenta: '#d3869b'
-      cyan:    '#8ec07c'
-      white:   '#ebdbb2'
-    normal:
-      black:   *gruvbox_dark_bg
-      red:     '#cc241d'
-      green:   '#98971a'
-      yellow:  '#d79921'
-      blue:    '#458588'
-      magenta: '#b16286'
-      cyan:    '#689d6a'
-      white:   '#a89984'
-    dim:
-      black:   '#32302f'
-      red:     '#9d0006'
-      green:   '#79740e'
-      yellow:  '#b57614'
-      blue:    '#076678'
-      magenta: '#8f3f71'
-      cyan:    '#427b58'
-      white:   '#928374'
-    indexed_colors:
-      - { index:  66, color: '#458588' }
-      - { index:  72, color: '#689d6a' }
-      - { index: 106, color: '#98971a' }
-      - { index: 108, color: '#8ec07c' }
-      - { index: 109, color: '#83a598' }
-      - { index: 124, color: '#cc241d' }
-      - { index: 132, color: '#b16286' }
-      - { index: 142, color: '#b8bb26' }
-      - { index: 166, color: '#d65d0e' }
-      - { index: 167, color: '#fb4934' }
-      - { index: 172, color: '#d79921' }
-      - { index: 175, color: '#d3869b' }
-      - { index: 208, color: '#fe8019' }
-      - { index: 214, color: '#fabd2f' }
-      - { index: 223, color: '#ebdbb2' }
-      - { index: 229, color: '#fbf1c7' }
-      - { index: 234, color: '#1d2021' }
-      - { index: 235, color: '#282828' }
-      - { index: 236, color: '#32302f' }
-      - { index: 237, color: '#3c3836' }
-      - { index: 239, color: '#504945' }
-      - { index: 241, color: '#665c54' }
-      - { index: 243, color: '#7c6f64' }
-      - { index: 245, color: '#928374' }
-      - { index: 246, color: '#a89984' }
-      - { index: 248, color: '#bdae93' }
-      - { index: 250, color: '#d5c4a1' }
-  rosepine: &rosepine
-    primary:
-      background: '0x191724'
-      foreground: '0xe0def4'
-    cursor:
-      text: '0xe0def4'
-      cursor: '0x524f67'
-    vi_mode_cursor:
-      text: '0xe0def4'
-      cursor: '0x524f67'
-    line_indicator:
-      foreground: None
-      background: None
-    selection:
-      text: '0xe0def4'
-      background: '0x403d52'
-    normal:
-      black: '0x26233a'
-      red: '0xeb6f92'
-      green: '0x31748f'
-      yellow: '0xf6c177'
-      blue: '0x9ccfd8'
-      magenta: '0xc4a7e7'
-      cyan: '0xebbcba'
-      white: '0xe0def4'
-    bright:
-      black: '0x6e6a86'
-      red: '0xeb6f92'
-      green: '0x31748f'
-      yellow: '0xf6c177'
-      blue: '0x9ccfd8'
-      magenta: '0xc4a7e7'
-      cyan: '0xebbcba'
-      white: '0xe0def4'
-    hints:
-      start:
-        foreground: '#908caa'
-        background: '#1f1d2e'
-      end:
-        foreground: '#6e6a86'
-        background: '#1f1d2e'
-  rosepinedawn: &rosepinedawn
-    primary:
-      background: '0xfaf4ed'
-      foreground: '0x575279'
-    cursor:
-      text: '0x575279'
-      cursor: '0xcecacd'
-    vi_mode_cursor:
-      text: '0x575279'
-      cursor: '0xcecacd'
-    line_indicator:
-      foreground: None
-      background: None
-    selection:
-      text: '0x575279'
-      background: '0xdfdad9'
-    normal:
-      black: '0xf2e9e1'
-      red: '0xb4637a'
-      green: '0x286983'
-      yellow: '0xea9d34'
-      blue: '0x56949f'
-      magenta: '0x907aa9'
-      cyan: '0xd7827e'
-      white: '0x575279'
-    bright:
-      black: '0x9893a5'
-      red: '0xb4637a'
-      green: '0x286983'
-      yellow: '0xea9d34'
-      blue: '0x56949f'
-      magenta: '0x907aa9'
-      cyan: '0xd7827e'
-      white: '0x575279'
-    hints:
-      start:
-        foreground: '#797593'
-        background: '#fffaf3'
-      end:
-        foreground: '#9893a5'
-        background: '#fffaf3'
-  zenburn: &zenburn
-    primary:
-      background: '#333333'
-      foreground: '#ffffff'
-
-      bright_foreground: '#ffffff'
-      bright_background: '#555555'
-
-    cursor:
-      text: '#000000'
-      cursor: '#00ff00'
-
-    normal:
-      black: '#4d4d4d'
-      red: '#bb0000'
-      green: '#98f898'
-      yellow: '#f0e68c'
-      blue: '#96853f'
-      magenta: '#ffdead'
-      cyan: '#ffa0a0'
-      white: '#f5deb3'
-
-    bright:
-      black: '#555555'
-      red: '#ff5555'
-      green: '#55ff55'
-      yellow: '#ffff55'
-      blue: '#87ceeb'
-      magenta: '#ff55ff'
-      cyan: '#ffd700'
-      white: '#ffffff'
-# TokyoNight Storm Alacritty Colors
-tokyo-night-storm: &tokyo-night-storm
+colors:
   primary:
-    background: '0x24283b'
-    foreground: '0xc0caf5'
-  normal:
-    black: '0x1D202F'
-    red: '0xf7768e'
-    green: '0x9ece6a'
-    yellow: '0xe0af68'
-    blue: '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan: '0x7dcfff'
-    white: '0xa9b1d6'
-  bright:
-    black: '0x414868'
-    red: '0xf7768e'
-    green: '0x9ece6a'
-    yellow: '0xe0af68'
-    blue: '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan: '0x7dcfff'
-    white: '0xc0caf5'
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
-  # TokyoNight Alacritty Colors
-tokyo-night: &tokyo-night
-  primary:
-    background: '0x1a1b26'
-    foreground: '0xc0caf5'
-  normal:
-    black: '0x15161E'
-    red: '0xf7768e'
-    green: '0x9ece6a'
-    yellow: '0xe0af68'
-    blue: '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan: '0x7dcfff'
-    white: '0xa9b1d6'
-  bright:
-    black: '0x414868'
-    red: '0xf7768e'
-    green: '0x9ece6a'
-    yellow: '0xe0af68'
-    blue: '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan: '0x7dcfff'
-    white: '0xc0caf5'
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
-nord: &nord
-  primary:
-    background: '#2e3440'
-    foreground: '#d8dee9'
-    dim_foreground: '#a5abb6'
+    background: "0x282828"
+    foreground: "0xdfbf8e"
+    bright_foreground: "#fbf1c7"
+    dim_foreground: "#a89984"
   cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
+    text: CellBackground
+    cursor: CellForeground
   vi_mode_cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
-  selection:
-    text: CellForeground
-    background: '#4c566a'
+    text: CellBackground
+    cursor: CellForeground
   search:
     matches:
-      foreground: CellBackground
-      background: '#88c0d0'
-    bar:
-      background: '#434c5e'
-      foreground: '#d8dee9'
-  normal:
-    black: '#3b4252'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#88c0d0'
-    white: '#e5e9f0'
-  bright:
-    black: '#4c566a'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#8fbcbb'
-    white: '#eceff4'
-  dim:
-    black: '#373e4d'
-    red: '#94545d'
-    green: '#809575'
-    yellow: '#b29e75'
-    blue: '#68809a'
-    magenta: '#8c738c'
-    cyan: '#6d96a5'
-    white: '#aeb3bb'
-catppuccin-frappe: &catppuccin-frappe # Default colors
-  primary:
-    background: '#303446' # base
-    foreground: '#C6D0F5' # text
-    # Bright and dim foreground colors
-    dim_foreground: '#C6D0F5' # text
-    bright_foreground: '#C6D0F5' # text
-
-  # Cursor colors
-  cursor:
-    text: '#303446' # base
-    cursor: '#F2D5CF' # rosewater
-  vi_mode_cursor:
-    text: '#303446' # base
-    cursor: '#BABBF1' # lavender
-
-  # Search colors
-  search:
-    matches:
-      foreground: '#303446' # base
-      background: '#A5ADCE' # subtext0
+      foreground: "#000000"
+      background: "#ffffff"
     focused_match:
-      foreground: '#303446' # base
-      background: '#A6D189' # green
+      foreground: CellBackground
+      background: CellForeground
     footer_bar:
-      foreground: '#303446' # base
-      background: '#A5ADCE' # subtext0
-
-  # Keyboard regex hints
-  hints:
-    start:
-      foreground: '#303446' # base
-      background: '#E5C890' # yellow
-    end:
-      foreground: '#303446' # base
-      background: '#A5ADCE' # subtext0
-
-  # Selection colors
+      background: ""
+      foreground: ""
+  line_indicator:
+    foreground: None
+    background: None
   selection:
-    text: '#303446' # base
-    background: '#F2D5CF' # rosewater
-
-  # Normal colors
-  normal:
-    black: '#51576D' # surface1
-    red: '#E78284' # red
-    green: '#A6D189' # green
-    yellow: '#E5C890' # yellow
-    blue: '#8CAAEE' # blue
-    magenta: '#F4B8E4' # pink
-    cyan: '#81C8BE' # teal
-    white: '#B5BFE2' # subtext1
-
-  # Bright colors
+    text: CellBackground
+    background: CellForeground
   bright:
-    black: '#626880' # surface2
-    red: '#E78284' # red
-    green: '#A6D189' # green
-    yellow: '#E5C890' # yellow
-    blue: '#8CAAEE' # blue
-    magenta: '#F4B8E4' # pink
-    cyan: '#81C8BE' # teal
-    white: '#A5ADCE' # subtext0
-
-  # Dim colors
+    black: "0x928374"
+    red: "0xea6962"
+    green: "0xa9b665"
+    yellow: "0xe3a84e"
+    blue: "0x7daea3"
+    magenta: "0xd3869b"
+    cyan: "0x89b482"
+    white: "0xdfbf8e"
+  normal:
+    black: "0x665c54"
+    red: "0xea6962"
+    green: "0xa9b665"
+    yellow: "0xe78a4e"
+    blue: "0x7daea3"
+    magenta: "0xd3869b"
+    cyan: "0x89b482"
+    white: "0xdfbf8e"
   dim:
-    black: '#51576D' # surface1
-    red: '#E78284' # red
-    green: '#A6D189' # green
-    yellow: '#E5C890' # yellow
-    blue: '#8CAAEE' # blue
-    magenta: '#F4B8E4' # pink
-    cyan: '#81C8BE' # teal
-    white: '#B5BFE2' # subtext1
-
+    black: "#32302f"
+    red: "#9d0006"
+    green: "#79740e"
+    yellow: "#b57614"
+    blue: "#076678"
+    magenta: "#8f3f71"
+    cyan: "#427b58"
+    white: "#928374"
   indexed_colors:
-    - { index: 16, color: '#EF9F76' }
-    - { index: 17, color: '#F2D5CF' }
-colors: *gruvbox_dark
+    - { index: 66, color: "#458588" }
+    - { index: 72, color: "#689d6a" }
+    - { index: 106, color: "#98971a" }
+    - { index: 108, color: "#8ec07c" }
+    - { index: 109, color: "#83a598" }
+    - { index: 124, color: "#cc241d" }
+    - { index: 132, color: "#b16286" }
+    - { index: 142, color: "#b8bb26" }
+    - { index: 166, color: "#d65d0e" }
+    - { index: 167, color: "#fb4934" }
+    - { index: 172, color: "#d79921" }
+    - { index: 175, color: "#d3869b" }
+    - { index: 208, color: "#fe8019" }
+    - { index: 214, color: "#fabd2f" }
+    - { index: 223, color: "#ebdbb2" }
+    - { index: 229, color: "#fbf1c7" }
+    - { index: 234, color: "#1d2021" }
+    - { index: 235, color: "#282828" }
+    - { index: 236, color: "#32302f" }
+    - { index: 237, color: "#3c3836" }
+    - { index: 239, color: "#504945" }
+    - { index: 241, color: "#665c54" }
+    - { index: 243, color: "#7c6f64" }
+    - { index: 245, color: "#928374" }
+    - { index: 246, color: "#a89984" }
+    - { index: 248, color: "#bdae93" }
+    - { index: 250, color: "#d5c4a1" }
