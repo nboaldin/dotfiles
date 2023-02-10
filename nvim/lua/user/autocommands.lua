@@ -29,7 +29,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "VimEnter" }, { 
+  callback = function()  
+      require("nvim-tree.api").tree.open()
+  end
+})
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
+
 
 -- Fixes Autocomment
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
