@@ -1,4 +1,6 @@
-# Font configuration
+window:
+  option_as_alt: Both
+
 font:
   size: 14.0
   offset:
