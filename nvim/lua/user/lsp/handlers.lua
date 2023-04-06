@@ -1,17 +1,17 @@
 local M = {}
 
 M.setup = function()
-  local signs = {
-
-    -- { name = "DiagnosticSignError", text = "" },
-    -- { name = "DiagnosticSignWarn", text = "" },
-    -- { name = "DiagnosticSignHint", text = "" },
-    -- { name = "DiagnosticSignInfo", text = "" },
-  }
-
-  for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-  end
+  --[[ local signs = { ]]
+  --[[]]
+  --[[   { name = "DiagnosticSignError", text = "" }, ]]
+  --[[   { name = "DiagnosticSignWarn", text = "" }, ]]
+  --[[   { name = "DiagnosticSignHint", text = "" }, ]]
+  --[[   { name = "DiagnosticSignInfo", text = "" }, ]]
+  --[[ } ]]
+  --[[]]
+  --[[ for _, sign in ipairs(signs) do ]]
+  --[[   vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" }) ]]
+  --[[ end ]]
 
   local config = {
     virtual_text = true, -- disable virtual text
@@ -75,7 +75,7 @@ M.on_attach = function(client, bufnr)
 
   M.capabilities = vim.lsp.protocol.make_client_capabilities()
   M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-  M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+  M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
   lsp_keymaps(client, bufnr)
   local status_ok, illuminate = pcall(require, "illuminate")

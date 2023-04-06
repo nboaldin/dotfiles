@@ -6,7 +6,11 @@ end
 require("user.lsp.handlers").setup()
 
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    "gopls", "jsonls", "marksman", "rust_analyzer", "terraformls", "vuels"
+  }
+})
 require("mason-lspconfig").setup_handlers {
   function(server_name)
     local opts = {
@@ -23,15 +27,30 @@ require("mason-lspconfig").setup_handlers {
   end,
 }
 
+require("mason").setup()
 require("mason-null-ls").setup({
-  ensure_installed = {
-    -- Opt to list sources here, when available in mason.
-  },
-  automatic_installation = false,
-  automatic_setup = true, -- Recommended, but optional
+    ensure_installed = {
+    "prettier", "shellcheck", "beautysh"
+    },
+    automatic_installation = false,
+    automatic_setup = true, -- Recommended, but optional
 })
 require("null-ls").setup({
-  on_attach = require("user.lsp.handlers").on_attach,
-  capabilities = require("user.lsp.handlers").capabilities,
+    sources = {
+        require("null-ls").builtins.diagnostics.zsh
+    }
 })
-require 'mason-null-ls'.setup_handlers()
+require 'mason-null-ls'.setup_handlers() -- If `automatic_setup` is true.
+
+--[[ require("mason-null-ls").setup({ ]]
+--[[   ensure_installed = { ]]
+--[[     "prettier", "shellcheck", "beautysh" ]]
+--[[   }, ]]
+--[[   automatic_installation = false, ]]
+--[[   automatic_setup = true, -- Recommended, but optional ]]
+--[[ }) ]]
+--[[ require("null-ls").setup({ ]]
+--[[   on_attach = require("user.lsp.handlers").on_attach, ]]
+--[[   capabilities = require("user.lsp.handlers").capabilities, ]]
+--[[ }) ]]
+--[[ require 'mason-null-ls'.setup_handlers() ]]
