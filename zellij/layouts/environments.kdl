@@ -1,5 +1,5 @@
 layout {
-  cwd "/Users/nboaldin/code/github.com/Banno/keanu"
+  cwd "/Users/nboaldin/code/github.com/Banno/environments"
   tab name="nvim" focus=true {
     pane size=1 borderless=true {
       plugin location="zellij:tab-bar"
@@ -16,17 +16,12 @@ layout {
     pane size=1 borderless=true {
       plugin location="zellij:tab-bar"
     }
-    pane split_direction="vertical" {
-      pane command="air" {
+    pane {
         borderless true
-      }
-      pane command="ngrok" {
-        args "http" "3000"
-          borderless true
-      }
     }
     pane size=2 borderless=true {
         plugin location="zellij:status-bar"
     }
   }
 }
+
