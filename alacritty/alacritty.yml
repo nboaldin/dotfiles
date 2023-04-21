@@ -21,6 +21,8 @@ colors:
     bright_foreground: "#fbf1c7"
     dim_foreground: "#a89984"
   cursor:
+    style: Block
+    unfocused_hollow: true
     text: CellBackground
     cursor: CellForeground
   vi_mode_cursor:
@@ -40,8 +42,19 @@ colors:
     foreground: None
     background: None
   selection:
+    # This string contains all characters that are used as separators for
+    # "semantic words" in Alacritty.
+    # semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+    # When set to `true`, selected text will be copied to the primary clipboard.
+    save_to_clipboard: true
     text: CellBackground
     background: CellForeground
+  mouse:
+   url:
+    launcher:
+      # This depends on your OS, on Mac it’s `open`
+      program: open
+    modifiers: Command
   bright:
     black: "0x928374"
     red: "0xea6962"

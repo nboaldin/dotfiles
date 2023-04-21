@@ -4,12 +4,11 @@ layout {
     pane size=1 borderless=true {
       plugin location="zellij:tab-bar"
     }
-    pane command="nvim" {
-      args "."
-        borderless true
+    pane command="nvim" start_suspended=true {
+      borderless true
     }
     pane size=2 borderless=true {
-        plugin location="zellij:status-bar"
+      plugin location="zellij:status-bar"
     }
   }
   tab name="server"  {
@@ -17,10 +16,10 @@ layout {
       plugin location="zellij:tab-bar"
     }
     pane {
-        borderless true
+      borderless true
     }
     pane size=2 borderless=true {
-        plugin location="zellij:status-bar"
+      plugin location="zellij:status-bar"
     }
   }
 }
