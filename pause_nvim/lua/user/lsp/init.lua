@@ -8,7 +8,7 @@ require("user.lsp.handlers").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
-    "gopls", "jsonls", "marksman", "rust_analyzer", "terraformls", "vuels"
+    "gopls", "jsonls", "marksman", "rust_analyzer", "terraformls", "vuels", "lua_ls"
   }
 })
 require("mason-lspconfig").setup_handlers {
