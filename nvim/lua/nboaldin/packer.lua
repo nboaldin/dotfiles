@@ -64,6 +64,15 @@ return require('packer').startup(function(use)
   }
 
   use {
+    "jay-babu/mason-null-ls.nvim",
+    requires = {
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    }
+
+  }
+
+  use {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
