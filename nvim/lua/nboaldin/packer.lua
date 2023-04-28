@@ -29,16 +29,12 @@ return require('packer').startup(function(use)
 
   use { 'akinsho/bufferline.nvim',
     tag = "*",
-    config = function()
-      require("bufferline").setup()
-    end
+    config = function() require("bufferline").setup() end
   }
 
   use {
     'nvim-tree/nvim-tree.lua',
-    config = function()
-      require("nvim-tree").setup()
-    end
+    config = function() require("nvim-tree").setup() end
   }
 
   use {
@@ -69,17 +65,21 @@ return require('packer').startup(function(use)
       "williamboman/mason.nvim",
       "jose-elias-alvarez/null-ls.nvim",
     }
-
   }
 
   use {
     'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
-    end
+    config = function() require('Comment').setup() end
   }
 
-  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()
-  end }
+  use { "akinsho/toggleterm.nvim", tag = '*',
+    config = function() require("toggleterm").setup() end
+  }
+
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
 end)
+
