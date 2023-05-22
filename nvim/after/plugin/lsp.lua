@@ -3,7 +3,7 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  "gopls", "jsonls", "marksman", "rust_analyzer", "terraformls", "vuels", "lua_ls"
+  "gopls", "jsonls", "marksman", "rust_analyzer", "terraformls", "vuels", "lua_ls", "tsserver"
 })
 
 -- Fix Undefined global 'vim'

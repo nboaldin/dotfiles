@@ -13,9 +13,18 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } },
   }
 
-  use { 'sainnhe/gruvbox-material',
-    as = 'gruvbox-material',
+  -- use { 'sainnhe/gruvbox-material',
+  --   as = 'gruvbox-material',
+  -- }
+
+  use { 'sainnhe/everforest',
+    as = 'everforest',
   }
+
+
+  -- use {
+  --   "catppuccin/nvim", as = "catppuccin"
+  -- }
 
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -32,9 +41,18 @@ return require('packer').startup(function(use)
     config = function() require("bufferline").setup() end
   }
 
+  -- use {
+  --   'nvim-tree/nvim-tree.lua',
+  --   config = function() require("nvim-tree").setup() end
+  -- }
+
   use {
-    'nvim-tree/nvim-tree.lua',
-    config = function() require("nvim-tree").setup() end
+    "nvim-neo-tree/neo-tree.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      -- "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
   }
 
   use {
@@ -80,6 +98,4 @@ return require('packer').startup(function(use)
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
-
 end)
-
