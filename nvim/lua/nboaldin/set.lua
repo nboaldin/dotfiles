@@ -44,6 +44,7 @@ vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 
+
 for k, v in pairs(options) do
   vim.opt[k] = v
 end

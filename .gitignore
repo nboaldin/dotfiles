@@ -1,4 +1,4 @@
-tmuxinator/
+tmuxinator/jh-*
 helix/runtime/
 zellij/layouts/jh-*
 k9s/config.yml
