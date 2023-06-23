@@ -1,5 +1,5 @@
-name: default
-root: ~/
+name: mine
+root: ~/code/github.com/nboaldin/mine
 
 # Optional tmux socket
 # socket_name: foo
@@ -46,7 +46,7 @@ root: ~/
 windows:
   - code:
       panes:
-        -
+        - nvim .
   - term:
       panes:
         -

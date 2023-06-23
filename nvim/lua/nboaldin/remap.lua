@@ -31,6 +31,9 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
+-- ZenMode
+keymap("n", "<leader>z", "<cmd>ZenMode<CR>", opts)
+
 -- Close buffers
 keymap("n", "<S-q>", vim.cmd.bdelete, opts)
 
@@ -54,7 +57,7 @@ keymap("v", ">", ">gv", opts)
 
 -- NeoTree
 keymap("n", "<leader>e", ":NeoTreeFloatToggle<CR>", opts)
- 
+
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
@@ -67,7 +70,7 @@ keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
--- 
+--
 -- -- DAP
 -- keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 -- keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)

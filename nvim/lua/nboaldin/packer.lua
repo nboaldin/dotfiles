@@ -13,18 +13,19 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } },
   }
 
-  -- use { 'sainnhe/gruvbox-material',
-  --   as = 'gruvbox-material',
-  -- }
 
   use { 'sainnhe/everforest',
     as = 'everforest',
   }
 
-
   -- use {
   --   "catppuccin/nvim", as = "catppuccin"
   -- }
+
+  -- use { 'sainnhe/gruvbox-material',
+  --   as = 'gruvbox-material',
+  -- }
+
 
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -35,6 +36,13 @@ return require('packer').startup(function(use)
   }
 
   use('mbbill/undotree')
+
+  -- use {
+  --   'willothy/nvim-cokeline',
+  --   config = function()
+  --     require('cokeline').setup()
+  --   end
+  -- }
 
   use { 'akinsho/bufferline.nvim',
     tag = "*",
@@ -97,5 +105,10 @@ return require('packer').startup(function(use)
   use {
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
+  }
+
+  use {
+    "folke/zen-mode.nvim",
+    config = function() require("zen-mode").setup {} end
   }
 end)
