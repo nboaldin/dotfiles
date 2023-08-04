@@ -25,6 +25,12 @@ shift "$(($OPTIND -1))"
 
 dir="$working_dir/$project"
 
+
+if [ ! -d "$dir" ]; then
+    echo "$dir does not exist."
+    exit 2
+fi
+
 echo "
 name: $project
 root: $dir
