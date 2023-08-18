@@ -87,7 +87,7 @@ require("formatter").setup({
       require("formatter.filetypes.css").prettierd,
     },
     terraform = {
-      require("formatter.filetypes.terraform").prettierd,
+      require("formatter.filetypes.terraform").terraformfmt,
     },
 
     -- Use the special "*" filetype for defining formatter configurations on
