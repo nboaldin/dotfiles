@@ -4,7 +4,14 @@ local formatter = require("formatter")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  "gopls", "jsonls", "marksman", "rust_analyzer", "terraformls", "vuels", "lua_ls", "tsserver"
+  "gopls",
+  "jsonls",
+  "marksman",
+  "rust_analyzer",
+  "terraformls",
+  "vuels",
+  "lua_ls",
+  "tsserver",
 })
 
 -- Fix Undefined global 'vim'
@@ -13,11 +20,11 @@ lsp.nvim_workspace()
 lsp.set_preferences({
   suggest_lsp_servers = false,
   sign_icons = {
-    error = 'E',
-    warn = 'W',
-    hint = 'H',
-    info = 'I'
-  }
+    error = "E",
+    warn = "W",
+    hint = "H",
+    info = "I",
+  },
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -46,7 +53,7 @@ lsp.setup()
 -- Utilities for creating configurations
 
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
-require("formatter").setup {
+require("formatter").setup({
   -- Enable or disable logging
   logging = true,
   -- Set the log level
@@ -62,42 +69,36 @@ require("formatter").setup {
     },
     sh = {
       require("formatter.filetypes.sh").shfmt,
-
     },
 
     markdown = {
       require("formatter.filetypes.markdown").prettierd,
-
     },
     html = {
       require("formatter.filetypes.html").prettierd,
-
     },
     json = {
       require("formatter.filetypes.json").prettierd,
-
     },
     yaml = {
       require("formatter.filetypes.yaml").prettierd,
-
     },
     css = {
       require("formatter.filetypes.css").prettierd,
-
     },
+    terraform = {
+      require("formatter.filetypes.terraform").prettierd,
+    },
+
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
     ["*"] = {
       -- "formatter.filetypes.any" defines default configurations for any
       -- filetype
-      require("formatter.filetypes.any").remove_trailing_whitespace
-    }
-  }
-}
-
-
-
-
+      require("formatter.filetypes.any").remove_trailing_whitespace,
+    },
+  },
+})
 
 -- Null ls was using prettier for lots of files, shellcheck and beauty sh for shell,
 
@@ -121,6 +122,10 @@ require("formatter").setup {
 -- require('mason-null-ls').setup({
 --   ensure_installed = nil,
 --   automatic_installation = true,
+-- })
+--
+-- vim.diagnostic.config({
+--   virtual_text = true
 -- })
 --
 -- vim.diagnostic.config({
