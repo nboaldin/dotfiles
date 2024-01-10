@@ -3,16 +3,16 @@ local formatter = require("formatter")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  "gopls",
-  "jsonls",
-  "marksman",
-  "rust_analyzer",
-  "terraformls",
-  "vuels",
-  "lua_ls",
-  "tsserver",
-})
+-- lsp.ensure_installed({
+--   "gopls",
+--   "jsonls",
+--   "marksman",
+--   "rust_analyzer",
+--   "terraformls",
+--   "vuels",
+--   "lua_ls",
+--   "tsserver",
+-- })
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
@@ -46,6 +46,28 @@ lsp.on_attach(function(client, bufnr)
   keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end)
+
+--- if you want to know more about lsp-zero and mason.nvim
+--- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = { "gopls",
+    "jsonls",
+    "marksman",
+    "rust_analyzer",
+    "terraformls",
+    "vuels",
+    "lua_ls",
+    "tsserver",
+  },
+  handlers = {
+    lsp.default_setup,
+    lua_ls = function()
+      local lua_opts = lsp.nvim_lua_ls()
+      require('lspconfig').lua_ls.setup(lua_opts)
+    end,
+  }
+})
 
 lsp.setup()
 
@@ -92,11 +114,11 @@ require("formatter").setup({
 
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype
-    ["*"] = {
-      -- "formatter.filetypes.any" defines default configurations for any
-      -- filetype
-      require("formatter.filetypes.any").remove_trailing_whitespace,
-    },
+    -- ["*"] = {
+    --   -- "formatter.filetypes.any" defines default configurations for any
+    --   -- filetype
+    --   require("formatter.filetypes.any").remove_trailing_whitespace,
+    -- },
   },
 })
 
