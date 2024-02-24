@@ -51,14 +51,15 @@ end)
 --- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { "gopls",
+  ensure_installed = {
+    "gopls",
     "jsonls",
     "marksman",
     "rust_analyzer",
     "terraformls",
-    "vuels",
     "lua_ls",
     "tsserver",
+    "volar"
   },
   handlers = {
     lsp.default_setup,
@@ -84,11 +85,11 @@ require("formatter").setup({
   filetype = {
     -- Formatter configurations for filetype "lua" go here
     -- and will be executed in order
-    lua = {
-      -- "formatter.filetypes.lua" defines default configurations for the
-      -- "lua" filetype
-      require("formatter.filetypes.lua").stylua,
-    },
+    -- lua = {
+    --   -- "formatter.filetypes.lua" defines default configurations for the
+    --   -- "lua" filetype
+    --   require("formatter.filetypes.lua").stylua,
+    -- },
     sh = {
       require("formatter.filetypes.sh").shfmt,
     },
@@ -110,7 +111,7 @@ require("formatter").setup({
     },
     terraform = {
       require("formatter.filetypes.terraform").terraformfmt,
-    },
+    }
 
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype

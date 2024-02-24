@@ -64,6 +64,10 @@ keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>gf", ":Telescope git_files<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
+-- Format outside of lsp (Formatter nvim)
+keymap("n", "<leader>lf", ":FormatWrite<CR>", opts)
+
+
 --UndoTree
 keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
 
