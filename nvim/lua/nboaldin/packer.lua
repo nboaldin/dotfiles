@@ -18,14 +18,6 @@ return require("packer").startup(function(use)
 
   use({ "sainnhe/everforest", as = "everforest" })
 
-  -- use {
-  --   "catppuccin/nvim", as = "catppuccin"
-  -- }
-
-  -- use { 'sainnhe/gruvbox-material',
-  --   as = 'gruvbox-material',
-  -- }
-
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
@@ -36,13 +28,6 @@ return require("packer").startup(function(use)
 
   use("mbbill/undotree")
 
-  -- use {
-  --   'willothy/nvim-cokeline',
-  --   config = function()
-  --     require('cokeline').setup()
-  --   end
-  -- }
-
   use({
     "akinsho/bufferline.nvim",
     tag = "*",
@@ -51,10 +36,6 @@ return require("packer").startup(function(use)
     end,
   })
 
-  -- use {
-  --   'nvim-tree/nvim-tree.lua',
-  --   config = function() require("nvim-tree").setup() end
-  -- }
 
   use({
     "nvim-neo-tree/neo-tree.nvim",
@@ -65,14 +46,6 @@ return require("packer").startup(function(use)
     },
   })
 
-  -- use {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("copilot").setup({})
-  --   end,
-  -- }
 
   use({
     "VonHeikemen/lsp-zero.nvim",
@@ -83,31 +56,33 @@ return require("packer").startup(function(use)
       {
         -- Optional
         "williamboman/mason.nvim",
-        run = function()
-          pcall(vim.cmd, "MasonUpdate")
-        end,
       },
       { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
       -- Autocompletion
-      { "hrsh7th/nvim-cmp" },     -- Required
-      { "hrsh7th/cmp-nvim-lsp" }, -- Required
-      { "L3MON4D3/LuaSnip" },     -- Required
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-nvim-lua' },
+
+      -- Snippets
+      { 'L3MON4D3/LuaSnip' },
+      { 'rafamadriz/friendly-snippets' },
     },
   })
 
-  -- use {
-  --   "jay-babu/mason-null-ls.nvim",
-  --   requires = {
-  --     "williamboman/mason.nvim",
-  --     "jose-elias-alvarez/null-ls.nvim",
-  --   }
-  -- }
-  --
-
   use({
-    "mhartington/formatter.nvim",
+    "stevearc/conform.nvistevearc/conform.nvimm",
   })
+
+  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+  use({
+    "leoluz/nvim-dap-go"
+  })
+
+
 
   use({
     "numToStr/Comment.nvim",
@@ -130,6 +105,8 @@ return require("packer").startup(function(use)
       require("nvim-autopairs").setup({})
     end,
   })
+
+  -- use("github/copilot.vim")
 
   use({
     "folke/zen-mode.nvim",

@@ -1,5 +1,4 @@
 local lsp = require("lsp-zero")
-local formatter = require("formatter")
 
 lsp.preset("recommended")
 
@@ -72,81 +71,6 @@ require('mason-lspconfig').setup({
 
 lsp.setup()
 
--- These are not auto installed so must be installed... currently installations happen via Mason
--- Utilities for creating configurations
-
--- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
-require("formatter").setup({
-  -- Enable or disable logging
-  logging = true,
-  -- Set the log level
-  log_level = vim.log.levels.WARN,
-  -- All formatter configurations are opt-in
-  filetype = {
-    -- Formatter configurations for filetype "lua" go here
-    -- and will be executed in order
-    -- lua = {
-    --   -- "formatter.filetypes.lua" defines default configurations for the
-    --   -- "lua" filetype
-    --   require("formatter.filetypes.lua").stylua,
-    -- },
-    sh = {
-      require("formatter.filetypes.sh").shfmt,
-    },
-
-    markdown = {
-      require("formatter.filetypes.markdown").prettierd,
-    },
-    html = {
-      require("formatter.filetypes.html").prettierd,
-    },
-    json = {
-      require("formatter.filetypes.json").prettierd,
-    },
-    yaml = {
-      require("formatter.filetypes.yaml").prettierd,
-    },
-    css = {
-      require("formatter.filetypes.css").prettierd,
-    },
-    terraform = {
-      require("formatter.filetypes.terraform").terraformfmt,
-    }
-
-    -- Use the special "*" filetype for defining formatter configurations on
-    -- any filetype
-    -- ["*"] = {
-    --   -- "formatter.filetypes.any" defines default configurations for any
-    --   -- filetype
-    --   require("formatter.filetypes.any").remove_trailing_whitespace,
-    -- },
-  },
-})
-
--- Null ls was using prettier for lots of files, shellcheck and beauty sh for shell,
-
--- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/guides/integrate-with-null-ls.md
--- local null_ls = require('null-ls')
---
--- null_ls.setup({
---   sources = {
---     -- Replace these with the tools you want to install
---     -- make sure the source name is supported by null-ls
---     -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
---     null_ls.builtins.formatting.prettier,
---     null_ls.builtins.diagnostics.shellcheck,
---     null_ls.builtins.formatting.beautysh,
---     null_ls.builtins.diagnostics.codespell,
---   }
--- })
---
--- -- See mason-null-ls.nvim's documentation for more details:
--- -- https://github.com/jay-babu/mason-null-ls.nvim#setup
--- require('mason-null-ls').setup({
---   ensure_installed = nil,
---   automatic_installation = true,
--- })
---
 -- vim.diagnostic.config({
 --   virtual_text = true
 -- })
