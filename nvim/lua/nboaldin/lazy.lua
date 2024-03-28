@@ -30,10 +30,13 @@ local plugins = {
 		end,
 	},
 	"mbbill/undotree",
+	-- {
+	-- 	"akinsho/bufferline.nvim",
+	-- 	version = "*",
+	-- 	config = true,
+	-- },
 	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		config = true,
+		"nvim-lualine/lualine.nvim",
 	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
