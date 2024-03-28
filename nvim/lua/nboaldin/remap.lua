@@ -3,7 +3,6 @@ local keymap = vim.keymap.set
 -- Silent keymap option
 local opts = { silent = true }
 
-
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -22,7 +21,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -52,11 +50,8 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
--- NvimTree
--- keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-
 -- NeoTree
-keymap("n", "<leader>e", ":NeoTreeFloatToggle<CR>", opts)
+keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
@@ -66,7 +61,6 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Format outside of lsp (Formatter nvim)
 keymap("n", "<leader>lf", ":FormatWrite<CR>", opts)
-
 
 --UndoTree
 keymap("n", "<leader>u", vim.cmd.UndotreeToggle)

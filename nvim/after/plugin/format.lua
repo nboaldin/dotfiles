@@ -5,7 +5,7 @@ require("conform").setup({
 		sh = { "shfmt" },
 		markdown = { "prettierd" },
 		html = { "prettierd" },
-		json = { "prettierd" },
+		-- json = { "prettierd" },
 		css = { "prettierd" },
 		yaml = { "prettierd" },
 		lua = { "stylua" },
