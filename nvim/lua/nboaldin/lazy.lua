@@ -33,7 +33,7 @@ local plugins = {
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",
-		config = true
+		config = true,
 	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -69,22 +69,22 @@ local plugins = {
 		},
 	},
 	"stevearc/conform.nvim",
-	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
-	"leoluz/nvim-dap-go",
 	{
 		"numToStr/Comment.nvim",
-		config = true
+		config = true,
 	},
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
-		config = true
+		config = true,
 	},
 	{
 		"windwp/nvim-autopairs",
-		config = true
+		config = true,
 	},
 	"github/copilot.vim",
+	-- { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
+	-- "leoluz/nvim-dap-go",
 }
 
 require("lazy").setup(plugins, {})
