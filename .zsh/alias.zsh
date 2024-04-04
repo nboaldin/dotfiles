@@ -2,7 +2,6 @@ alias n="nvim"
 alias t="tmux"
 alias ta="tmux a -t"
 alias tk="tmux kill-session -t"
-alias ts="tmux_session"
 
 alias z="zellij"
 
