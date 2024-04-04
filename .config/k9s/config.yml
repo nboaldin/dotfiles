@@ -1,0 +1,65 @@
+k9s:
+  liveViewAutoRefresh: false
+  refreshRate: 2
+  maxConnRetry: 5
+  enableMouse: false
+  enableImageScan: false
+  headless: false
+  logoless: false
+  crumbsless: false
+  readOnly: false
+  noExitOnCtrlC: false
+  noIcons: false
+  shellPod:
+    image: busybox:1.35.0
+    namespace: default
+    limits:
+      cpu: 100m
+      memory: 100Mi
+  skipLatestRevCheck: false
+  logger:
+    tail: 100
+    buffer: 5000
+    sinceSeconds: 300
+    fullScreenLogs: false
+    textWrap: false
+    showTime: false
+  currentContext: tools-centralus-aks
+  currentCluster: tools-centralus-aks
+  keepMissingClusters: false
+  clusters:
+    production-centralus-aks:
+      namespace:
+        active: techops
+        lockFavorites: false
+        favorites:
+        - ldap
+        - techops
+        - infrastructure
+        - default
+      view:
+        active: pod
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+    tools-centralus-aks:
+      namespace:
+        active: techops
+        lockFavorites: false
+        favorites:
+        - techops
+        - default
+      view:
+        active: pod
+      featureGates:
+        nodeShell: false
+      portForwardAddress: localhost
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+  screenDumpDir: /var/folders/lr/3hzwzx054bn63n6pcq13c2g40000gn/T/k9s-screens-NBoaldin
+  disablePodCounting: false

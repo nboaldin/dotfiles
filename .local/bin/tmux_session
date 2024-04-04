@@ -1,0 +1,46 @@
+#!/bin/bash
+
+base="/Users/NBoaldin/code/github.com"
+
+while getopts 'lhd:p:' OPTION; do
+    case "$OPTION" in
+        p)
+            project="$OPTARG"
+            echo "you have supplied the -p option"
+            ;;
+        d)
+            working_dir="$base/$OPTARG"
+            echo "The value provided is $OPTARG"
+            ;;
+        ?)
+            echo "check the script for usage" >&2
+            exit 1
+            ;;
+    esac
+done
+shift "$(($OPTIND -1))"
+
+dir="$working_dir/$project"
+
+
+if [[ ! -d $dir ]] ; then
+    echo "$dir does not exist."
+    exit 2
+fi
+
+echo "
+name: $project
+root: $dir
+on_project_start: rm /tmp/tmuxinator_project.yml
+
+
+windows:
+  - code:
+      panes:
+        - nvim .
+  - zsh:
+      panes:
+        -
+" > /tmp/tmuxinator_project.yml
+
+tmuxinator s -p /tmp/tmuxinator_project.yml

@@ -4,3 +4,8 @@ zellij/layouts/jh-*
 k9s/config.yml
 nvim/plugin/
 
+.zsh/secrets.zsh
+.zsh/work_alias.zsh
+.zsh/work_function.zsh
+.zshenv
+

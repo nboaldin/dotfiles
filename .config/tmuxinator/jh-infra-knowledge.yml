@@ -1,0 +1,9 @@
+root: ~/code/github.com/banno/infrastructure-knowledge
+
+windows:
+  - code:
+      panes:
+        - nvim .
+  - zsh:
+      panes:
+        -

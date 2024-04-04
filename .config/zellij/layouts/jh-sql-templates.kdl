@@ -1,0 +1,43 @@
+layout {
+  tab name="service" focus=true cwd="/Users/nboaldin/code/github.com/Banno/sql-template-service" {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane command="nvim" {
+      args "."
+        borderless true
+    }
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+  }
+  tab name="ux" cwd="/Users/nboaldin/code/github.com/Banno/sql-template-ux" {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane command="nvim" {
+      args "."
+        borderless true
+    }
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+  }
+  tab name="server"  {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane split_direction="vertical" {
+      pane cwd="/Users/nboaldin/code/github.com/Banno/sql-template-service" {
+        borderless true
+      }
+      pane cwd="/Users/nboaldin/code/github.com/Banno/sql-template-ux" {
+        borderless true
+      }
+    }
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+  }
+}
+
