@@ -2,17 +2,6 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
--- lsp.ensure_installed({
---   "gopls",
---   "jsonls",
---   "marksman",
---   "rust_analyzer",
---   "terraformls",
---   "vuels",
---   "lua_ls",
---   "tsserver",
--- })
-
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 
@@ -57,7 +46,6 @@ require("mason-lspconfig").setup({
 		"terraformls",
 		"lua_ls",
 		"tsserver",
-		"volar",
 	},
 	handlers = {
 		lsp.default_setup,
@@ -65,6 +53,19 @@ require("mason-lspconfig").setup({
 			local lua_opts = lsp.nvim_lua_ls()
 			require("lspconfig").lua_ls.setup(lua_opts)
 		end,
+		-- eslint = function()
+		-- 	require("lspconfig").eslint.setup({
+		-- 		on_attach = lsp.on_attach,
+		-- 		filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+		-- 		root_dir = require("lspconfig/util").root_pattern(".git", ".eslintrc"),
+		-- 		settings = {
+		-- 			codeActionOnSave = {
+		-- 				enable = true,
+		-- 				mode = "all",
+		-- 			},
+		-- 		},
+		-- 	})
+		-- end,
 	},
 })
 

@@ -113,7 +113,7 @@ keybinds {
     }
     tmux {
         bind "[" { SwitchToMode "Scroll"; }
-        bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
+        bind "Ctrl a" { Write 2; SwitchToMode "Normal"; }
         bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
@@ -169,7 +169,7 @@ keybinds {
         bind "Ctrl m" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
-        bind "Ctrl b" { SwitchToMode "Tmux"; }
+        bind "Ctrl a" { SwitchToMode "Tmux"; }
     }
 }
 
@@ -219,6 +219,32 @@ default_shell "zsh"
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
 themes {
+    pop-bright {
+        fg "#F2F2F2"
+        bg "#333333"
+        red "#F15D22"
+        green "#73C48F"
+        yellow "#FFCE51"
+        blue "#48B9C7"
+        magenta "#AD7FA8"
+        orange "#F15D22"
+        cyan "#34E2E2"
+        black "#88807C"
+        white "#EEEEEC"
+    }
+    pop-normal {
+        fg "#F2F2F2"
+        bg "#333333"
+        black "#333333"
+        red "#CC0000"
+        green "#4E9A06"
+        yellow "#C4A000"
+        blue "#3465A4"
+        magenta "#75507B"
+        orange "#CC0000"
+        cyan "#06989A"
+        white "#D3D7CF"
+    }
     dracula {
         fg 248 248 242
         bg 40 42 54
@@ -263,7 +289,7 @@ themes {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "gruvbox-dark"
+theme "pop-normal"
 
 // The name of the default layout to load on startup
 // Default: "default"
