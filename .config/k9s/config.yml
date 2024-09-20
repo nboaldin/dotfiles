@@ -47,6 +47,7 @@ k9s:
         active: techops
         lockFavorites: false
         favorites:
+        - infrastructure
         - techops
         - default
       view:

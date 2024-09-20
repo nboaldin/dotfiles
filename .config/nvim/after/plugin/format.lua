@@ -3,16 +3,17 @@ require("conform").setup({
 	formatters_by_ft = {
 		terraform = { "terraform_fmt" },
 		sh = { "shfmt" },
-		markdown = { "prettierd" },
-		html = { "prettierd" },
+		markdown = { "prettier" },
+		html = { "prettier" },
 		-- json = { "prettierd" },
-		css = { "prettierd" },
-		yaml = { "prettierd" },
+		css = { "prettier" },
+		yaml = { "prettier" },
 		lua = { "stylua" },
 		-- Conform will run multiple formatters sequentially
 		go = { "goimports", "gofmt" },
 		-- Use a sub-list to run only the first available formatter
-		javascript = { { "prettierd", "prettier" } },
+		javascript = { "prettier" },
+		typescript = { "prettier" },
 		-- You can use a function here to determine the formatters dynamically
 		-- Use the "*" filetype to run formatters on all filetypes.
 		["*"] = { "codespell" },

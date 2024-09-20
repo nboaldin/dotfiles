@@ -54,6 +54,7 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
 
 -- Telescope
+keymap("n", "<leader>t", ":Telescope <CR>", opts)
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>gf", ":Telescope git_files<CR>", opts)
