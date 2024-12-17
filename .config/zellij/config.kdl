@@ -133,6 +133,9 @@ keybinds {
         bind "d" { Detach; }
         bind "Space" { NextSwapLayout; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
+        bind "0" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "1" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "2" { GoToTab 3; SwitchToMode "Normal"; }
     }
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
