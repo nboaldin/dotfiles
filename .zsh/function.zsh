@@ -8,7 +8,7 @@ ts() {
 tmux new-session -d -s $(basename "$PWD") -c "$DIRECTORY" -n code
 
 tmux new-window -t $(basename "$PWD") -n term
-tmux send-keys -t code 'hx .' C-m
+tmux send-keys -t code 'nvim .' C-m
 tmux select-window -t code
 
 

@@ -51,10 +51,10 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- NeoTree
-keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
+keymap("n", "<leader>e", ":lua MiniFiles.open()<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>t", ":Telescope <CR>", opts)
+keymap("n", "<leader>tt", ":Telescope <CR>", opts)
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>gf", ":Telescope git_files<CR>", opts)
@@ -67,7 +67,7 @@ keymap("n", "<leader>lf", ":FormatWrite<CR>", opts)
 keymap("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 -- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 --
 -- -- DAP

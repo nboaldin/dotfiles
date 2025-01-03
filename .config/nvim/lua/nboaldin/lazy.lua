@@ -21,7 +21,8 @@ local plugins = {
 		config = true,
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
-	{ "sainnhe/everforest", name = "everforest" },
+	{ "echasnovski/mini.nvim", version = "*" },
+	{ "glepnir/zephyr-nvim", name = "zephyr" },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = function()

@@ -17,7 +17,7 @@ git-ignore = false
 display-messages = true
 
 #[keys.insert]
-#j = { k = "normal_mode" } 
+#j = { k = "normal_mode" }
 #k = { j = "normal_mode" }
 
 #[keys.normal]
@@ -50,6 +50,9 @@ V = ["select_mode", "extend_to_line_bounds"]
 C = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection", "insert_mode"]
 D = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection"]
 S = "surround_add" # Would be nice to be able to do something after this but it isn't chainable
+L = "goto_next_buffer"
+H = "goto_previous_buffer"
+Q = ":bc"
 
 # Clipboards over registers ye ye
 x = "delete_selection"
@@ -121,7 +124,7 @@ g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to
 [keys.insert]
 # Escape the madness! No more fighting with the cursor! Or with multiple cursors!
 esc = ["collapse_selection", "normal_mode"]
-j = { k = "normal_mode" } 
+j = { k = "normal_mode" }
 k = { j = "normal_mode" }
 
 [keys.select]

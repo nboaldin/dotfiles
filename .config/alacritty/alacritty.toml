@@ -1,26 +1,52 @@
 [colors.primary]
-background = "#333333"
-foreground = "#F2F2F2"
+background = "#262a33" # bg
+foreground = "#bbc2cf" # fg
 
 [colors.normal]
-black = "#333333"
-red = "#CC0000"
-green = "#4E9A06"
-yellow = "#C4A000"
-blue = "#3465A4"
-magenta = "#75507B"
-cyan = "#06989A"
-white = "#D3D7CF"
+black = "#262a33"   # bg
+red = "#e95678"     # red
+green = "#98be65"   # green
+yellow = "#f7bb3b"  # yellow
+blue = "#61afef"    # blue
+magenta = "#CBA6F7" # violet
+cyan = "#36d0e0"    # cyan
+white = "#504945"   # bg1
 
 [colors.bright]
-black = "#88807C"
-red = "#F15D22"
-green = "#73C48F"
-yellow = "#FFCE51"
-blue = "#48B9C7"
-magenta = "#AD7FA8"
-cyan = "#34E2E2"
-white = "#EEEEEC"
+black = "#928374"   # grey
+red = "#e95678"     # red
+green = "#afd700"   # green
+yellow = "#f7bb3b"  # yellow
+blue = "#61afef"    # blue
+magenta = "#CBA6F7" # violet
+cyan = "#36d0e0"    # cyan
+white = "#bbc2cf"   # fg
+
+
+
+# [colors.primary]
+# background = "#333333"
+# foreground = "#F2F2F2"
+#
+# [colors.normal]
+# black = "#333333"
+# red = "#CC0000"
+# green = "#4E9A06"
+# yellow = "#C4A000"
+# blue = "#3465A4"
+# magenta = "#75507B"
+# cyan = "#06989A"
+# white = "#D3D7CF"
+#
+# [colors.bright]
+# black = "#88807C"
+# red = "#F15D22"
+# green = "#73C48F"
+# yellow = "#FFCE51"
+# blue = "#48B9C7"
+# magenta = "#AD7FA8"
+# cyan = "#34E2E2"
+# white = "#EEEEEC"
 
 
 # [colors.bright]
