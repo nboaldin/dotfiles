@@ -1,0 +1,11 @@
+tmuxinator/jh-*
+helix/runtime/
+zellij/layouts/jh-*
+nvim/plugin/
+
+.zsh/secrets.zsh
+.zsh/work_alias.zsh
+.zsh/work_function.zsh
+.zshenv
+
+.local/

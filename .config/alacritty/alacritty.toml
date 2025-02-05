@@ -1,0 +1,47 @@
+[colors.primary]
+background = "#262a33" # bg
+foreground = "#bbc2cf" # fg
+
+[colors.normal]
+black = "#262a33"   # bg
+red = "#e95678"     # red
+green = "#1ABC9C"   # green - zephyr neovim teal
+yellow = "#f7bb3b"  # yellow
+blue = "#61afef"    # blue
+magenta = "#CBA6F7" # violet
+cyan = "#36d0e0"    # cyan
+white = "#504945"   # bg1
+
+[colors.bright]
+black = "#928374"   # grey
+red = "#e95678"     # red
+green = "#1ABC9C"   # green - zephyr neovim teal
+yellow = "#f7bb3b"  # yellow
+blue = "#61afef"    # blue
+magenta = "#CBA6F7" # violet
+cyan = "#36d0e0"    # cyan
+white = "#bbc2cf"   # fg
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "BlexMono Nerd Font"
+style = "Text"
+
+[font.normal]
+family = "BlexMono Nerd Font"
+style = "Light"
+
+[font.offset]
+x = 1
+y = 1
+
+[window]
+option_as_alt = "Both"
+startup_mode = "Fullscreen"
+decorations = "Buttonless"
+
