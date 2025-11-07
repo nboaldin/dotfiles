@@ -61,18 +61,15 @@ vim.opt.signcolumn = "yes"
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
--- Add cmp_nvim_lsp capabilities settings to lspconfig
--- This should be executed before you configure any language server
-local lspconfig_defaults = require("lspconfig").util.default_config
-lspconfig_defaults.capabilities =
-    vim.tbl_deep_extend("force", lspconfig_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
+vim.lsp.config("*", {
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
 
 -- This is where you enable features that only work
 -- if there is a language server active in the file
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(event)
         local opts = { buffer = event.buf }
-
 
         vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
         vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
@@ -89,64 +86,61 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
-require("mason").setup({})
-require("mason-lspconfig").setup({
-    ensure_installed = {},
-    handlers = {
-        -- this first function is the "default handler"
-        -- it applies to every language server without a custom handler
-        function(server_name)
-            require("lspconfig")[server_name].setup({})
-        end,
-
-        -- this is the "custom handler" for `lua_ls`
-        lua_ls = function()
-            require("lspconfig").lua_ls.setup({
-                settings = {
-                    Lua = {
-                        runtime = {
-                            version = "LuaJIT",
-                        },
-                        diagnostics = {
-                            globals = { "vim" },
-                        },
-                        workspace = {
-                            library = { vim.env.VIMRUNTIME },
-                        },
-                    },
-                },
-            })
-        end,
-        eslint = function()
-            require("lspconfig").eslint.setup({
-                settings = {
-                    codeAction = {
-                        disableRuleComment = {
-                            enable = true,
-                            location = "separateLine",
-                        },
-                        showDocumentation = {
-                            enable = true,
-                        },
-                    },
-                    codeActionOnSave = {
-                        enable = true,
-                        mode = "all",
-                    },
-                    format = true,
-                    nodePath = "",
-                    onIgnoredFiles = "off",
-                    packageManager = "npm",
-                    quiet = false,
-                    rulesCustomizations = {},
-                    run = "onType",
-                    useESLintClass = false,
-                    validate = "on",
-                    workingDirectory = {
-                        mode = "location",
-                    },
-                },
-            })
-        end,
+vim.lsp.config("lua_ls", {
+    settings = {
+        Lua = {
+            runtime = {
+                version = "LuaJIT",
+            },
+            diagnostics = {
+                globals = { "vim" },
+            },
+            workspace = {
+                library = { vim.env.VIMRUNTIME },
+            },
+        },
     },
 })
+
+vim.lsp.config("eslint", {
+    settings = {
+        codeAction = {
+            disableRuleComment = {
+                enable = true,
+                location = "separateLine",
+            },
+            showDocumentation = {
+                enable = true,
+            },
+        },
+        codeActionOnSave = {
+            enable = true,
+            mode = "all",
+        },
+        format = true,
+        nodePath = "",
+        onIgnoredFiles = "off",
+        packageManager = "npm",
+        quiet = false,
+        rulesCustomizations = {},
+        run = "onType",
+        useESLintClass = false,
+        validate = "on",
+        workingDirectory = {
+            mode = "location",
+        },
+    },
+})
+
+vim.lsp.config("ts_ls", {
+    cmd = { "typescript-language-server", "--stdio" },
+    root_markers = {
+        { "tsconfig.json", "jsconfig.json" },
+        "package.json",
+        ".git",
+    },
+    workspace_required = true,
+})
+
+require("mason").setup({})
+require("mason-lspconfig").setup({})

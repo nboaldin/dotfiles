@@ -1,10 +1,12 @@
 vim.api.nvim_create_autocmd("VimEnter", {
     pattern = "*",
     callback = function()
-        vim.api.nvim_win_set_width(0, 120)
-        require("telescope.builtin").find_files()
+        -- vim.api.nvim_win_set_width(0, 120)
+        require("mini.files").open()
     end,
 })
+
+
 
 -- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 -- vim.cmd([[autocmd BufWritePre * FormatWrite]])

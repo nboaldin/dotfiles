@@ -31,27 +31,38 @@ local plugins = {
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     { "tpope/vim-fugitive" },
-    { "echasnovski/mini.nvim", version = "*" },
-    { "glepnir/zephyr-nvim",   name = "zephyr" },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = function()
-            local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-            ts_update()
-        end,
-    },
+    { "echasnovski/mini.nvim",           version = "*" },
+    { "glepnir/zephyr-nvim",             name = "zephyr" },
+    { "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
     { "mbbill/undotree" },
     {
         "nvim-lualine/lualine.nvim",
     },
-    { "neovim/nvim-lspconfig" },
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
+        dependencies = {
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
+        },
+    },
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-nvim-lua" },
     { "L3MON4D3/LuaSnip" },
     { "stevearc/conform.nvim" },
+    {
+        "mfussenegger/nvim-lint",
+        config = function()
+            -- Instead of specifying filetypes, use an autocommand to lint with codespell for any filetype
+            vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+                callback = function()
+                    -- Run codespell for the current buffer's filetype
+                    require("lint").try_lint("codespell")
+                end,
+            })
+        end,
+    },
     {
         "numToStr/Comment.nvim",
         config = true,
@@ -69,12 +80,11 @@ local plugins = {
         end,
         ft = { "markdown" },
     },
-
+    {
+        "github/copilot.vim"
+    },
 }
 
 require("lazy").setup({
-    spec = plugins,
-    -- Configure any other settings here. See the documentation for more details.
-    -- automatically check for plugin updates
-    checker = { enabled = true },
+    spec = plugins
 })
