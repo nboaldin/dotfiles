@@ -1,0 +1,105 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin": "0",
+  "spacing": 8,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "cpu",
+    "memory",
+    "temperature",
+    "network",
+    "battery",
+    "tray"
+  ],
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "disable-scroll": true,
+    "on-click": "hyprctl dispatch workspace {name}",
+    "format": "{name}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "hyprland/window": {
+    "max-length": 60,
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "Firefox",
+      "(.*) - Google Chrome": "Chrome",
+      "": "Desktop"
+    }
+  },
+  "clock": {
+    "interval": 60,
+    "format": "{:%a %b %d · %H:%M}",
+    "tooltip-format": "{0:%A}\n{0:%B %d, %Y}\n{0:%H:%M:%S}"
+  },
+  "network": {
+    "markup": true,
+    "format-wifi": "<span foreground='#cba6f7'>󰖩</span> <span foreground='#f7bb3b'>{essid} {signalStrength}%</span>",
+    "format-ethernet": "<span foreground='#cba6f7'>󰈀</span> <span foreground='#f7bb3b'>{ifname}</span>",
+    "format-disconnected": "<span foreground='#cba6f7'>󰤭</span> <span foreground='#f7bb3b'>offline</span>",
+    "tooltip-format": "{ifname}\n{ipaddr}"
+  },
+  "pulseaudio": {
+    "markup": true,
+    "format": "<span foreground='#cba6f7'>{icon}</span> <span foreground='#f7bb3b'>{volume}%</span>",
+    "format-bluetooth": "<span foreground='#cba6f7'></span> <span foreground='#f7bb3b'>{volume}%</span>",
+    "format-muted": "<span foreground='#cba6f7'></span> <span foreground='#f7bb3b'>muted</span>",
+    "format-icons": ["", "", ""],
+    "scroll-step": 3,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pactl set-sink-volume @DEFAULT_SINK@ 100%"
+  },
+  "backlight": {
+    "markup": true,
+    "format": "<span foreground='#cba6f7'></span> <span foreground='#f7bb3b'>{percent}%</span>",
+    "tooltip-format": "{percent}%"
+  },
+  "cpu": {
+    "interval": 5,
+    "markup": true,
+    "format": "<span foreground='#cba6f7'></span> <span foreground='#f7bb3b'>{usage}%</span>"
+  },
+  "memory": {
+    "interval": 5,
+    "markup": true,
+    "format": "<span foreground='#cba6f7'>󰍛</span> <span foreground='#f7bb3b'>{used:0.1f}G</span>"
+  },
+  "temperature": {
+    "interval": 5,
+    "hwmon-path": "/sys/class/thermal/thermal_zone0/temp",
+    "critical-threshold": 80,
+    "markup": true,
+    "format": "<span foreground='#cba6f7'></span> <span foreground='#f7bb3b'>{temperatureC}°C</span>"
+  },
+  "battery": {
+    "markup": true,
+    "format": "<span foreground='#cba6f7'></span> <span foreground='#f7bb3b'>{capacity}%</span>",
+    "format-charging": "<span foreground='#cba6f7'></span> <span foreground='#f7bb3b'>{capacity}%</span>",
+    "format-full": "<span foreground='#cba6f7'></span> <span foreground='#f7bb3b'>full</span>",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "tooltip-format": "{timeTo}"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  }
+}

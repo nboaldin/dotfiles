@@ -1,7 +1,7 @@
 # homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+# FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
 
 # google cloud sdk components
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
