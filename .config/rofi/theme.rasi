@@ -1,0 +1,126 @@
+* {
+  bg: #262a33;
+  bg-alt: #2b303b;
+  fg: #bbc2cf;
+  muted: #928374;
+  accent: #61afef;
+  accent2: #00ff99;
+  urgent: #e95678;
+  warn: #f7bb3b;
+  cyan: #36d0e0;
+  transparent: #00000000;
+
+  font: "BlexMono Nerd Font 12";
+}
+
+window {
+  location: center;
+  width: 42%;
+  background-color: #262a33f2;
+  border: 2px;
+  border-color: @accent;
+  border-radius: 10px;
+}
+
+mainbox {
+  padding: 16px;
+  background-color: @transparent;
+}
+
+inputbar {
+  spacing: 8px;
+  padding: 10px 12px;
+  background-color: @bg-alt;
+  border-radius: 8px;
+}
+
+prompt {
+  text-color: @accent2;
+  background-color: @transparent;
+}
+
+textbox-prompt-colon {
+  text-color: @accent2;
+  background-color: @transparent;
+}
+
+case-indicator {
+  background-color: @transparent;
+  text-color: @muted;
+}
+
+mode-switcher {
+  background-color: @transparent;
+  spacing: 6px;
+}
+
+button {
+  background-color: @transparent;
+  text-color: @muted;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+button selected {
+  background-color: @accent;
+  text-color: @bg;
+}
+
+entry {
+  text-color: @fg;
+  placeholder-color: @muted;
+  background-color: @transparent;
+}
+
+listview {
+  margin: 12px 0 0;
+  lines: 10;
+  columns: 1;
+  fixed-height: false;
+  background-color: @transparent;
+  scrollbar: true;
+}
+
+element {
+  padding: 8px 10px;
+  border-radius: 6px;
+  background-color: @transparent;
+  text-color: @fg;
+}
+
+element selected {
+  background-color: @accent;
+  text-color: @bg;
+}
+
+element-text,
+element-icon {
+  background-color: @transparent;
+  text-color: inherit;
+}
+
+element-icon {
+  size: 22px;
+  margin: 0 10px 0 0;
+}
+
+scrollbar {
+  handle-width: 8px;
+  border-radius: 8px;
+  background-color: @bg-alt;
+}
+
+handle {
+  background-color: @cyan;
+}
+
+message {
+  background-color: @transparent;
+  text-color: @fg;
+  padding: 6px 0 0;
+}
+
+textbox {
+  background-color: @transparent;
+  text-color: @fg;
+}
