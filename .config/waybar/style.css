@@ -6,7 +6,7 @@
 
 window#waybar {
   background: rgba(38, 42, 51, 0.92);
-  color: #cba6f7;
+  color: #bbc2cf;
   border-bottom: 1px solid rgba(97, 175, 239, 0.25);
   padding: 4px 10px;
 }
@@ -17,7 +17,7 @@ window#waybar {
 }
 
 #workspaces button {
-  color: #f7bb3b;
+  color: #bbc2cf;
   background: transparent;
   border: none;
   border-radius: 0;
@@ -28,12 +28,12 @@ window#waybar {
 }
 
 #workspaces button.active {
-  color: #f7bb3b;
-  border-color: #f7bb3b;
+  color: #bbc2cf;
+  border-color: #bbc2cf;
 }
 
 #workspaces button:hover {
-  color: #f7bb3b;
+  color: #bbc2cf;
 }
 
 #window,
@@ -52,7 +52,7 @@ window#waybar {
   margin: 0 8px 0 0;
   border: none;
   box-shadow: none;
-  color: #f7bb3b;
+  color: #bbc2cf;
 }
 
 #window {
@@ -62,7 +62,7 @@ window#waybar {
 #clock {
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #cba6f7;
+  color: #bbc2cf;
 }
 
 #network.disconnected {
