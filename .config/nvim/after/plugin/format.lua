@@ -42,12 +42,18 @@ require("conform").setup({
     -- It will pass the table to conform.format().
     -- This can also be a function that returns the table.
     async = true,
-    format_on_save = {
-        -- I recommend these options. See :help conform.format for details.
-        lsp_format = "prefer",
-        -- This should be ignored since async true is set
-        timeout_ms = 500,
-    },
+    format_on_save = function(bufnr)
+        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+            return
+        end
+
+        return {
+            -- I recommend these options. See :help conform.format for details.
+            lsp_format = "prefer",
+            -- This should be ignored since async true is set
+            timeout_ms = 500,
+        }
+    end,
     -- If this is set, Conform will run the formatter asynchronously after save.
     -- It will pass the table to conform.format().
     -- This can also be a function that returns the table.
@@ -57,3 +63,16 @@ require("conform").setup({
     notify_on_error = true,
     -- Custom formatters and changes to built-in formatters
 })
+
+vim.api.nvim_create_user_command("FormatDisable", function(opts)
+    if opts.bang then
+        vim.b.disable_autoformat = true
+    else
+        vim.g.disable_autoformat = true
+    end
+end, { desc = "Disable autoformat-on-save", bang = true })
+
+vim.api.nvim_create_user_command("FormatEnable", function()
+    vim.b.disable_autoformat = false
+    vim.g.disable_autoformat = false
+end, { desc = "Re-enable autoformat-on-save" })

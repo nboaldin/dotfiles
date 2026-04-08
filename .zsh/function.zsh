@@ -8,6 +8,8 @@ ts() {
 tmux new-session -d -s $(basename "$PWD") -c "$DIRECTORY" -n code
 
 tmux new-window -t $(basename "$PWD") -n term
+tmux split-window -h -t $(basename "$PWD"):term -c "$DIRECTORY"
+tmux select-pane -t $(basename "$PWD"):term.1 -T ai
 tmux new-window -t $(basename "$PWD") -n git
 tmux send-keys -t git 'lg' C-m
 tmux send-keys -t code 'nvim .' C-m
@@ -20,4 +22,3 @@ tmux attach-session -t $(basename "$PWD")
 zs() {
     zellij --session "$(basename "$PWD")"
 }
-

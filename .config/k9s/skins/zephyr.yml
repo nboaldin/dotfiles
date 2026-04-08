@@ -1,0 +1,99 @@
+# ~/.config/k9s/skins/zephyr.yml
+# Matches your Alacritty theme:
+# bg:   #262a33
+# fg:   #bbc2cf
+# red:  #e95678
+# grn:  #1ABC9C
+# yel:  #f7bb3b
+# blu:  #61afef
+# mag:  #CBA6F7
+# cyn:  #36d0e0
+# dim:  #928374 / #504945
+
+k9s:
+  body:
+    fgColor: "#bbc2cf"
+    bgColor: "#262a33"
+    logoColor: "#36d0e0" # cyan
+
+  info:
+    fgColor: "#bbc2cf"
+    sectionColor: "#61afef" # blue
+
+  frame:
+    border:
+      fgColor: "#504945" # subtle border
+      focusColor: "#36d0e0" # cyan on focus
+
+    menu:
+      fgColor: "#bbc2cf"
+      keyColor: "#36d0e0" # cyan for keys
+      numKeyColor: "#f7bb3b" # yellow for numeric keys
+
+    crumbs:
+      fgColor: "#bbc2cf"
+      bgColor: "#262a33"
+      activeColor: "#61afef" # blue for active crumb
+
+    status:
+      newColor: "#1ABC9C" # teal
+      modifyColor: "#f7bb3b" # yellow
+      addColor: "#1ABC9C" # teal
+      errorColor: "#e95678" # red
+      highlightColor: "#36d0e0" # cyan
+      killColor: "#e95678" # red
+      completedColor: "#928374" # dim/grey
+
+    title:
+      fgColor: "#bbc2cf"
+      bgColor: "#262a33"
+      highlightColor: "#CBA6F7" # magenta/violet
+      counterColor: "#36d0e0" # cyan
+      filterColor: "#1ABC9C" # teal
+
+  views:
+    table:
+      fgColor: "#bbc2cf"
+      bgColor: "#262a33"
+      cursorColor: "#36d0e0" # row under cursor
+      header:
+        fgColor: "#61afef" # blue headers
+        bgColor: "#262a33"
+        sorterColor: "#f7bb3b" # yellow sort indicator
+
+    yaml:
+      keyColor: "#61afef" # blue for keys
+      colonColor: "#928374" # dim
+      valueColor: "#bbc2cf"
+
+    logs:
+      fgColor: "#bbc2cf"
+      bgColor: "#262a33" # matches terminal bg
+      indicator:
+        fgColor: "#36d0e0" # scroll indicator
+        bgColor: "#262a33"
+
+    xray:
+      fgColor: "#bbc2cf"
+      bgColor: "#262a33"
+      cursorColor: "#36d0e0"
+
+    charts:
+      bgColor: "#262a33"
+      defaultDialColor: "#61afef"
+      defaultBarColor: "#1ABC9C"
+      defaultChartColor: "#36d0e0"
+
+    help:
+      fgColor: "#bbc2cf"
+      bgColor: "#262a33"
+      sectionColor: "#61afef"
+      keyColor: "#36d0e0"
+
+    # Optional: prompt dialogs / modals
+    prompt:
+      fgColor: "#bbc2cf"
+      bgColor: "#262a33"
+      borderColor: "#36d0e0"
+      labelColor: "#CBA6F7"
+      fieldColor: "#262a33"

@@ -13,8 +13,8 @@ antigen bundles <<EOBUNDLES
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-syntax-highlighting
 lukechilds/zsh-nvm
+jeffreytse/zsh-vi-mode
 EOBUNDLES
 
 antigen theme romkatv/powerlevel10k
