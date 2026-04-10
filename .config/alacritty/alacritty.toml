@@ -26,7 +26,7 @@ white = "#bbc2cf"   # fg
 TERM = "xterm-256color"
 
 [font]
-size = 13.0
+size = 11
 
 [font.bold]
 family = "BlexMono Nerd Font"

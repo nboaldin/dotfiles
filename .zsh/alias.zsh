@@ -16,6 +16,7 @@ alias godot4="godot"
 #change tool defaults
 alias cat="bat --style=plain --theme=ansi"
 # alias tar="gtar"
+alias l="ls -alt"
 
 alias k="kubectl"
 alias tf="terraform"

@@ -6,11 +6,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # curl -L git.io/antigen > $HOME/antigen.zsh
-source $HOME/antigen.zsh
+source /usr/share/zsh/share/antigen.zsh
 
 antigen use oh-my-zsh # Add Oh-My-ZSH as an API for plugins and theme
 
 antigen bundles <<EOBUNDLES
+common-aliases
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
@@ -32,9 +33,17 @@ if [[ -z $TMUX ]]; then
   PATH="$PATH"
 fi
 
-neofetch
+fastfetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [[ -s "/Users/NBoaldin/.gvm/scripts/gvm" ]] && source "/Users/NBoaldin/.gvm/scripts/gvm"
+
+# pnpm
+export PNPM_HOME="/home/nando/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
