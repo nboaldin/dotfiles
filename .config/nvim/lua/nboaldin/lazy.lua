@@ -32,8 +32,8 @@ local plugins = {
     },
     { "tpope/vim-fugitive" },
     { "echasnovski/mini.nvim",           version = "*" },
-    { "glepnir/zephyr-nvim",             name = "zephyr" },
-    { "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate" },
+    { "nboaldin/zephyr-nvim",            name = "zephyr" },
+    { "nvim-treesitter/nvim-treesitter", branch = 'main', lazy = false, build = ":TSUpdate" },
     { "mbbill/undotree" },
     {
         "nvim-lualine/lualine.nvim",
@@ -62,10 +62,6 @@ local plugins = {
                 end,
             })
         end,
-    },
-    {
-        "numToStr/Comment.nvim",
-        config = true,
     },
     {
         "windwp/nvim-autopairs",

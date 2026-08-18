@@ -2,3 +2,10 @@ gui:
   theme:
     selectedLineBgColor:
       - default
+os:
+  editPreset: "nvim"
+
+git:
+  pagers:
+    - colorArg: never
+      pager: delta --syntax-theme=ansi --side-by-side --paging=never
