@@ -29,9 +29,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
--- ZenMode
-keymap("n", "<leader>z", "<cmd>ZenMode<CR>", opts)
-
 -- Close buffers
 keymap("n", "<S-q>", vim.cmd.bdelete, opts)
 
@@ -61,8 +58,8 @@ keymap("n", "<leader>fs", ":Telescope grep_string<CR>", opts)
 keymap("n", "<leader>gf", ":Telescope git_files<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
--- Format outside of lsp (Formatter nvim)
-keymap("n", "<leader>lf", ":FormatWrite<CR>", opts)
+-- Format buffer with conform
+keymap("n", "<leader>lf", function() require("conform").format({ async = true, lsp_format = "prefer" }) end, opts)
 
 --UndoTree
 keymap("n", "<leader>u", vim.cmd.UndotreeToggle)

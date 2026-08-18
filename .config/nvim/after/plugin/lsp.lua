@@ -1,19 +1,12 @@
---[[
-  Make sure you have these plugins installed:
-  * neovim/nvim-lspconfig
-  * williamboman/mason.nvim
-  * williamboman/mason-lspconfig.nvim
-  * hrsh7th/nvim-cmp
-  * hrsh7th/cmp-nvim-lsp
-  * L3MON4D3/LuaSnip
-]]
-
 local cmp = require("cmp")
 
 cmp.setup({
-    sources = {
+    sources = cmp.config.sources({
         { name = "nvim_lsp" },
-    },
+        { name = "luasnip" },
+    }, {
+        { name = "buffer" },
+    }),
     snippet = {
         expand = function(args)
             require("luasnip").lsp_expand(args.body)
@@ -32,12 +25,15 @@ cmp.setup({
         end,
     },
     mapping = cmp.mapping.preset.insert({
-        -- scroll up and down the documentation window
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
+            elseif vim.snippet.active({ direction = 1 }) then
+                vim.snippet.jump(1)
             else
                 fallback()
             end
@@ -45,6 +41,8 @@ cmp.setup({
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
+            elseif vim.snippet.active({ direction = -1 }) then
+                vim.snippet.jump(-1)
             else
                 fallback()
             end
@@ -53,13 +51,8 @@ cmp.setup({
     }),
 })
 
--- Reserve a space in the gutter
--- This will avoid an annoying layout shift in the screen
-vim.opt.signcolumn = "yes"
-
--- Add borders to floating windows
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+-- Use rounded borders globally for all LSP floating windows
+vim.o.winborder = "rounded"
 
 vim.lsp.config("*", {
     capabilities = require("cmp_nvim_lsp").default_capabilities(),

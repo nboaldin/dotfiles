@@ -1,8 +1,10 @@
+-- Open mini.files only when nvim is started with no file arguments
 vim.api.nvim_create_autocmd("VimEnter", {
     pattern = "*",
     callback = function()
-        -- vim.api.nvim_win_set_width(0, 120)
-        require("mini.files").open()
+        if vim.fn.argc() == 0 then
+            require("mini.files").open()
+        end
     end,
 })
 
