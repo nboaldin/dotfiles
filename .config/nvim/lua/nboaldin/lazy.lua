@@ -17,71 +17,17 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Setup lazy.nvim
-local plugins = {
-
-    {
-        "nvim-telescope/telescope.nvim",
-        -- version = "0.1.1",
-        config = true,
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
-    { "tpope/vim-fugitive" },
-    { "echasnovski/mini.nvim",           version = "*" },
-    { "nboaldin/zephyr-nvim",            name = "zephyr" },
-    { "nvim-treesitter/nvim-treesitter", branch = 'main', lazy = false, build = ":TSUpdate" },
-    { "mbbill/undotree" },
-    {
-        "nvim-lualine/lualine.nvim",
-    },
-    {
-        "mason-org/mason-lspconfig.nvim",
-        opts = {},
-        dependencies = {
-            { "mason-org/mason.nvim", opts = {} },
-            "neovim/nvim-lspconfig",
+-- Every file in lua/nboaldin/plugins/ returns a list of plugin specs.
+require("lazy").setup({
+    spec = { { import = "nboaldin.plugins" } },
+    checker = { enabled = false },
+    change_detection = { notify = false },
+    performance = {
+        rtp = {
+            disabled_plugins = { "gzip", "tarPlugin", "tohtml", "tutor", "zipPlugin" },
         },
     },
-    { "hrsh7th/nvim-cmp" },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-buffer" },
-    { "L3MON4D3/LuaSnip" },
-    { "saadparwaiz1/cmp_luasnip" },
-    { "stevearc/conform.nvim" },
-    {
-        "mfussenegger/nvim-lint",
-        config = function()
-            -- Instead of specifying filetypes, use an autocommand to lint with codespell for any filetype
-            vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
-                callback = function()
-                    -- Run codespell for the current buffer's filetype
-                    require("lint").try_lint("codespell")
-                end,
-            })
-        end,
-    },
-    {
-        "windwp/nvim-autopairs",
-        config = true,
-    },
-    {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        build = function()
-            vim.fn["mkdp#util#install"]()
-        end,
-        init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
-        ft = { "markdown" },
-    },
-
-}
-
-require("lazy").setup({
-    spec = plugins
 })
