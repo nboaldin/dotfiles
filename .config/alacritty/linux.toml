@@ -1,0 +1,15 @@
+# Linux (arch-start) overrides for alacritty.toml, which holds the macOS values.
+# Not loaded automatically. On the Linux machine either copy these three
+# settings over their counterparts in alacritty.toml, or add to alacritty.toml:
+#   [general]
+#   import = ["~/.config/alacritty/linux.toml"]
+# (imported values override the main file).
+
+[font]
+size = 11
+
+[window]
+startup_mode = "Windowed"
+
+[scrolling]
+multiplier = 10
