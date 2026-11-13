@@ -4,8 +4,7 @@ gui:
       - default
 os:
   editPreset: "nvim"
-
 git:
-  pagers:
+  diffRenderers:
     - colorArg: never
-      pager: delta --syntax-theme=ansi --side-by-side --paging=never
+      command: delta --syntax-theme=ansi --side-by-side --paging=never

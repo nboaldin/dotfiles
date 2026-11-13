@@ -1,6 +1,6 @@
 local parsers = {
     "cmake", "json", "javascript", "typescript", "go", "rust", "bash", "vue",
-    "markdown", "markdown_inline",
+    "markdown", "markdown_inline", "c", "lua", "vim", "vimdoc", "query", "swift",
 }
 
 return {

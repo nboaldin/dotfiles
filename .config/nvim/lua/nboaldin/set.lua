@@ -39,6 +39,23 @@ local options = {
     colorcolumn = "80",
 }
 
+-- Use wl-clipboard on Wayland so Neovim shares clipboard with other apps (e.g. Brave)
+if vim.env.WAYLAND_DISPLAY and vim.fn.executable("wl-copy") == 1 and vim.fn.executable("wl-paste") == 1 then
+    vim.g.clipboard = {
+        name = "wl-clipboard",
+        copy = {
+            -- Avoid --foreground so wl-copy doesn't block Neovim while holding the clipboard
+            ["+"] = { "wl-copy", "--type", "text/plain" },
+            ["*"] = { "wl-copy", "--primary", "--type", "text/plain" },
+        },
+        paste = {
+            ["+"] = "wl-paste --no-newline",
+            ["*"] = "wl-paste --no-newline --primary",
+        },
+        cache_enabled = 0,
+    }
+end
+
 
 vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append("c")
