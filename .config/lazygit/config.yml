@@ -1,0 +1,10 @@
+gui:
+  theme:
+    selectedLineBgColor:
+      - default
+os:
+  editPreset: "nvim"
+git:
+  diffRenderers:
+    - colorArg: never
+      command: delta --syntax-theme=ansi --side-by-side --paging=never
