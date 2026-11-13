@@ -72,4 +72,4 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # per-machine overrides (untracked; see .gitignore)
-[[ -r ~/.zsh/local.zsh ]] && source ~/.zsh/local.zsh
+if [[ -r ~/.zsh/local.zsh ]]; then source ~/.zsh/local.zsh; fi
