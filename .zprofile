@@ -1,28 +1,17 @@
-# Login-shell environment. Shared by macOS (main) and Linux (arch-start).
+# Login-shell environment (PATH). Interactive setup lives in ~/.zshrc.
 
-# homebrew (macOS) — static equivalent of `brew shellenv`; avoids forking brew,
-# which is slow. Apple Silicon: /opt/homebrew, Intel: /usr/local. No brew on Linux.
-if [[ $OSTYPE == darwin* ]]; then
-  if [[ $(uname -m) == arm64 ]]; then _brew=/opt/homebrew; else _brew=/usr/local; fi
-  export HOMEBREW_PREFIX=$_brew
-  export HOMEBREW_CELLAR=$_brew/Cellar
-  export HOMEBREW_REPOSITORY=$_brew
-  path=($_brew/bin $_brew/sbin $path)
-  export MANPATH="$_brew/share/man${MANPATH+:$MANPATH}:"
-  export INFOPATH="$_brew/share/info:${INFOPATH:-}"
-  fpath=($_brew/share/zsh/site-functions $_brew/share/zsh-completions $fpath)
-  unset _brew
+# homebrew — static `brew shellenv` (forking brew is slow). Skipped where brew isn't installed.
+if [[ -d /opt/homebrew ]]; then
+  export HOMEBREW_PREFIX=/opt/homebrew
+  export HOMEBREW_CELLAR=/opt/homebrew/Cellar
+  export HOMEBREW_REPOSITORY=/opt/homebrew
+  path=(/opt/homebrew/bin /opt/homebrew/sbin $path)
+  export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:"
+  export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
 fi
 
-# google cloud sdk PATH (completion is loaded from ~/.zshrc, after compinit)
-for _d in ${HOMEBREW_PREFIX:+$HOMEBREW_PREFIX/share/google-cloud-sdk} /opt/google-cloud-sdk /usr/share/google-cloud-sdk; do
-  if [[ -r $_d/path.zsh.inc ]]; then source "$_d/path.zsh.inc"; break; fi
-done
-unset _d
-
-#asdf
+# asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
-#esp for dev on udoo key
-[[ -r $HOME/export-esp.sh ]] && . $HOME/export-esp.sh
+# esp for dev on udoo key
+if [[ -r ~/export-esp.sh ]]; then . ~/export-esp.sh; fi

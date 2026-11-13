@@ -30,11 +30,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
 
-# --- ls ---
-if [[ $OSTYPE == darwin* ]]; then
-  alias ls='ls -G'
-else
-  alias ls='ls --color=auto'
-fi
+# --- ls (the `ls` colour flag itself is set in darwin.zsh / linux.zsh) ---
 alias ll='ls -lh'
 alias la='ls -lAh'

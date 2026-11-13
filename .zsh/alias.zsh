@@ -19,14 +19,3 @@ alias cat="bat --style=plain --theme=ansi"
 alias k="kubectl"
 alias tf="terraform"
 alias lg="lazygit"
-
-# macOS (main)
-if [[ $OSTYPE == darwin* ]]; then
-  alias tar="gtar"
-fi
-
-# Linux (arch-start)
-if [[ $OSTYPE == linux* ]]; then
-  alias l="ls -alt"
-  alias dot="cd ~/dotfiles"
-fi

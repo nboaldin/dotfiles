@@ -1,7 +1,6 @@
 # sheldon plugin config — https://sheldon.cli.rs
 # Shared between macOS (main) and Linux (arch-start). Linux-only plugins use
-# `profiles`; the profile is chosen in ~/.zshrc via SHELDON_PROFILE.
-# After editing, open a new shell (the generated cache is rebuilt automatically).
+# `profiles`; linux.zsh sets SHELDON_PROFILE=linux (macOS sets none).
 shell = "zsh"
 
 [templates]
