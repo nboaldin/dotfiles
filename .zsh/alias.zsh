@@ -15,9 +15,18 @@ alias godot4="godot"
 
 #change tool defaults
 alias cat="bat --style=plain --theme=ansi"
-alias tar="gtar"
 
 alias k="kubectl"
 alias tf="terraform"
 alias lg="lazygit"
-alias m="tmuxinator"
+
+# macOS (main)
+if [[ $OSTYPE == darwin* ]]; then
+  alias tar="gtar"
+fi
+
+# Linux (arch-start)
+if [[ $OSTYPE == linux* ]]; then
+  alias l="ls -alt"
+  alias dot="cd ~/dotfiles"
+fi

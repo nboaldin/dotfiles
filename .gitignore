@@ -9,3 +9,5 @@ nvim/plugin/
 .zshenv
 
 .local/
+
+.zsh/local.zsh

@@ -1,0 +1,37 @@
+# sheldon plugin config — https://sheldon.cli.rs
+# Shared between macOS (main) and Linux (arch-start). Linux-only plugins use
+# `profiles`; the profile is chosen in ~/.zshrc via SHELDON_PROFILE.
+# After editing, open a new shell (the generated cache is rebuilt automatically).
+shell = "zsh"
+
+[templates]
+# Load after the first prompt is drawn (needs zsh-defer, loaded first below).
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+# fpath only; compinit itself runs in ~/.zshrc (cached).
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+dir = "src"
+apply = ["fpath"]
+
+[plugins.powerlevel10k]
+github = "romkatv/powerlevel10k"
+use = ["powerlevel10k.zsh-theme"]
+
+# arch-start used the oh-my-zsh common-aliases plugin; keep that there only.
+[plugins.common-aliases]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins/common-aliases"
+profiles = ["linux"]
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+apply = ["defer"]
+
+# must stay last: it wraps widgets that are defined above
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+apply = ["defer"]
