@@ -1,6 +1,4 @@
 tmuxinator/jh-*
-helix/runtime/
-zellij/layouts/jh-*
 nvim/plugin/
 
 .zsh/secrets.zsh
@@ -11,3 +9,4 @@ nvim/plugin/
 .local/
 
 .zsh/local.zsh
+.config/alacritty/local.toml

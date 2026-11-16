@@ -1,0 +1,8 @@
+# macOS values. install.sh links this to local.toml on macOS.
+# Settings set here must not also appear in alacritty.toml (it overrides imports).
+
+[font]
+size = 14.0
+
+[window]
+startup_mode = "Fullscreen"

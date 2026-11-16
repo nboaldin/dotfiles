@@ -6,10 +6,6 @@ alias tk="tmux kill-session -t"
 alias s="npx supabase"
 alias supabase="npx supabase"
 
-alias z="zellij"
-alias za="zellij attach"
-alias zk="zellij kill-all-sessions"
-alias zd="zellij delete-all-sessions"
 
 alias godot4="godot"
 

@@ -29,6 +29,3 @@ ts() {
   fi
 }
 
-zs() {
-    zellij --session "$(basename "$PWD")"
-}

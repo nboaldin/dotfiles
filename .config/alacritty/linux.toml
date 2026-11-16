@@ -1,9 +1,8 @@
-# Linux (arch-start) overrides for alacritty.toml, which holds the macOS values.
-# Not loaded automatically. On the Linux machine either copy these three
-# settings over their counterparts in alacritty.toml, or add to alacritty.toml:
-#   [general]
-#   import = ["~/.config/alacritty/linux.toml"]
-# (imported values override the main file).
+# Linux (Arch/GNOME) values. install.sh links this to local.toml on Linux.
+# Settings set here must not also appear in alacritty.toml (it overrides imports).
+#
+# Size 9 because GNOME scales these displays 1.67x (built-in) / 1.5x (external)
+# and Alacritty multiplies the point size by that scale.
 
 [font]
 size = 11

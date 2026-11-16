@@ -1,3 +1,9 @@
+# Per-OS font size and window values live in darwin.toml / linux.toml. install.sh links the
+# right one to local.toml. NOTE: the importing file wins over its imports, so the
+# per-OS settings must NOT also be set in this file.
+[general]
+import = ["~/.config/alacritty/local.toml"]
+
 [colors.primary]
 background = "#262a33" # bg
 foreground = "#bbc2cf" # fg
@@ -25,17 +31,6 @@ white = "#bbc2cf"   # fg
 [env]
 TERM = "xterm-256color"
 
-[font]
-size = 14.0
-
-# [font.bold]
-# family = "BlexMono Nerd Font"
-# style = "Text"
-#
-# [font.normal]
-# family = "BlexMono Nerd Font"
-# style = "Light"
-
 [font.bold]
 family = "Maple Mono NF"
 style = "Bold"
@@ -44,12 +39,10 @@ style = "Bold"
 family = "Maple Mono NF"
 style = "Thin"
 
-
 [font.offset]
 x = 1
 y = 1
 
 [window]
 option_as_alt = "Both"
-startup_mode = "Fullscreen"
 decorations = "Buttonless"
