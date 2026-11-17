@@ -4,7 +4,6 @@ export SHELDON_PROFILE=linux   # enables the linux-only plugins in plugins.toml
 GCLOUD_SDK=/opt/google-cloud-sdk
 
 alias ls='ls --color=auto'
-alias l='ls -alt'
 alias dot='cd ~/dotfiles'
 
 export PNPM_HOME="$HOME/.local/share/pnpm"
